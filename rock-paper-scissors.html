@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <p>Choose your move:</p>
+        
+        <div>
+            <button onclick="play('rock')">Rock</button>
+            <button onclick="play('paper')">Paper</button>
+            <button onclick="play('scissors')">Scissors</button>
+        </div>
+
+        <div class="result" id="result">Make your choice!</div>
+
+        <div id="choices" style="display:none; font-size: 40px; margin: 20px 0;">
+            <span id="playerChoice"></span> VS <span id="computerChoice"></span>
+        </div>
+
+        <div class="score">
+            <div>You: <span id="playerScore">0</span></div>
+            <div>Computer: <span id="computerScore">0</span></div>
+        </div>
+
+        <button class="reset" onclick="reset()">Reset Game</button>
+        
+        <div style="margin-top: 20px;">
+            <strong>Rules:</strong><br>
+            Rock beats Scissors | Paper beats Rock | Scissors beats Paper
+        </div>
+
+        <br><a href="index.html" style="color: white;">← Back to Home</a>
+    </div>
+
+    <script>
+        let playerScore = 0;
+        let computerScore = 0;
+        const choices = {rock: 'Rock', paper: 'Paper', scissors: 'Scissors'};
+
+        function play(playerChoice) {
+            const options = ['rock', 'paper', 'scissors'];
+            const computerChoice = options[Math.floor(Math.random() * 3)];
+            
+            document.getElementById('choices').style.display = 'block';
+            document.getElementById('playerChoice').textContent = choices[playerChoice];
+            document.getElementById('computerChoice').textContent = choices[computerChoice];
+
+            let result = '';
+            if (playerChoice === computerChoice) {
+                result = "It's a tie!";
+            } else if (
+                (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                (playerChoice === 'paper' && computerChoice === 'rock') ||
+                (playerChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                result = "You win!";
+                playerScore++;
+            } else {
+                result = "Computer wins!";
+                computerScore++;
+            }
+
+            document.getElementById('result').textContent = result;
+            document.getElementById('playerScore').textContent = playerScore;
+            document.getElementById('computerScore').textContent = computerScore;
+        }
+
+        function reset() {
+            playerScore = 0;
+            computerScore = 0;
+            document.getElementById('playerScore').textContent = playerScore;
+            document.getElementById('computerScore').textContent = computerScore;
+            document.getElementById('result').textContent = 'Make your choice!';
+            document.getElementById('choices').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

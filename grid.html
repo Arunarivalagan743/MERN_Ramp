@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Grid Layout</title>
+    <style>
+      :root {
+        --accent: #0078d4;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:  Arial,
+          sans-serif;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-areas: "header header" "sidebar content-one" "sidebar content-two" "footer footer";
+        gap: 12px;
+        min-height: 100vh;
+        padding: 12px;
+      }
+      .part {
+        border: 2px solid var(--accent);
+        padding: 16px;
+      }
+      .header {
+        grid-area: header;
+      }
+      .sidebar {
+        grid-area: sidebar;
+      }
+      .content-one {
+        grid-area: content-one;
+      }
+      .content-two {
+        grid-area: content-two;
+      }
+      .footer {
+        grid-area: footer;
+      }
+      h1,
+      h2 {
+        margin: 0 0 8px 0;
+        font-weight: 600;
+      }
+      .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+      @media (max-width: 720px) {
+        .grid {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto auto auto;
+          grid-template-areas: "header" "sidebar" "content-one" "content-two" "footer";
+        }
+        .two { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <header class="part header">
+        <h1>Header</h1>
+        <p>simple header</p>
+      </header>
+
+      <aside class="part sidebar">
+        <h2>Sidebar</h2>
+        <p>simple sidebar</p>
+      </aside>
+
+      <main class="part content-one">
+        <h2>Content One</h2>
+        <p>simple content one</p>
+      </main>
+
+      <section class="part content-two">
+        <h2>Content Two</h2>
+        <div class="two">
+          <div class="part"><p>box one</p></div>
+          <div class="part"><p>box two</p></div>
+        </div>
+      </section>
+
+      <footer class="part footer">
+        <h2>Footer</h2>
+        <p>simple footer</p>
+      </footer>
+    </div>
+  </body>
+</html>

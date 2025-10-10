@@ -3,14 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon</title>
+    <title>Flexbox website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .header {
+            background-color: #1f2937;
+            color: white;
+            padding: 16px 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #e5e7eb;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        
+        .hero {
+            background-color: #1f2937;
+            color: white;
+            padding: 100px 150px;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            color: #e5e7eb;
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .signup-btn {
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .hero-image {
+            flex: 1;
+            height: 250px;
+            background-color: #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            padding: 20px;
+        }
+        
+        .info-section {
+            padding: 48px 150px;
+            text-align: center;
+        }
+        
+        .info-section h2 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #1f2937;
+            margin-bottom: 48px;
+        }
+        
+        .info-cards {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        
+        .info-card {
+            text-align: center;
+            max-width: 200px;
+        }
+        
+        .info-card-image {
+            width: 170px;
+            height: 170px;
+            border: 4px solid #3b82f6;
+            margin-bottom: 8px;
+        }
+        
+        .info-card p {
+            color: #6b7280;
+            line-height: 1.4;
+        }
+        
+        .quote-section {
+            background-color: #e5e7eb;
+            padding: 100px 150px;
+            text-align: center;
+        }
+        
+        .quote {
+            font-size: 36px;
+            font-style: italic;
+            font-weight: 300;
+            color: #1f2937;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        
+        .quote-author {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+            text-align: right;
+            margin-right: 150px;
+        }
+        
+        .cta-section {
+            background-color: #3b82f6;
+            margin: 100px 150px;
+            padding: 50px 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cta-content h3 {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        
+        .cta-content p {
+            color: #e5e7eb;
+            font-size: 18px;
+        }
+        
+        .cta-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 32px;
+            font-size: 16px;
+        }
+
+        .info-card-image {
+            background-color: #f3f4f6;
+        }
+      
+    </style>
 </head>
 <body>
-    <h1>Amazon</h1>
-    <p>Amazon is a multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.</p>
-    <div>
-        <a href="order.html" target="_blank" rel="noopener noreferrer">View Order</a>
-        <p>For more information, visit the <a href="flexbox.html" target="_blank" rel="noopener noreferrer">official Amazon website</a>.</p>
-    </div>
-    </body>
+    <header class="header">
+        <div class="logo">Amazon Explorer</div>
+        <ul class="nav-links">
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Amazon</a></li>
+        </ul>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Amazon World</h1>
+            <p>Discover the amazing world of Amazon - from e-commerce revolution to cloud computing, AI innovations, and beyond. Experience the future of technology and shopping.</p>
+            <button class="signup-btn">Explore Amazon</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" style="max-width: 100%; height: auto;">
+        </div>
+    </section>
+
+    <section class="info-section" style="background-color: white; padding: 48px 150px;">
+        <h2 style="color: #1f2937; margin-bottom: 24px;">Web Development Learning Hub</h2>
+        <p style="color: #6b7280; font-size: 18px; margin-bottom: 40px;">Explore interactive examples and learn web development concepts</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px;">
+            <div style="background: white; padding: 20px; border: 1px solid #e5e7eb;">
+                <h3 style="color: #1f2937; margin-bottom: 10px; font-size: 18px;">Media Queries</h3>
+                <p style="color: #6b7280; margin-bottom: 15px; line-height: 1.5;">Learn responsive design - how websites adapt to different screen sizes</p>
+                <a href="media-queries.html" style="background-color: #1f2937; color: white; padding: 8px 16px; text-decoration: none; font-weight: 600;">View Demo</a>
+            </div>
+            
+            <div style="background: white; padding: 20px; border: 1px solid #e5e7eb;">
+                <h3 style="color: #1f2937; margin-bottom: 10px; font-size: 18px;">DOM Manipulation</h3>
+                <p style="color: #6b7280; margin-bottom: 15px; line-height: 1.5;">Interactive JavaScript examples - change text, colors, and create elements</p>
+                <a href="dom-manipulation.html" style="background-color: #1f2937; color: white; padding: 8px 16px; text-decoration: none; font-weight: 600;">Try It Out</a>
+            </div>
+            
+            <div style="background: white; padding: 20px; border: 1px solid #e5e7eb;">
+                <h3 style="color: #1f2937; margin-bottom: 10px; font-size: 18px;">Rock Paper Scissors</h3>
+                <p style="color: #6b7280; margin-bottom: 15px; line-height: 1.5;">Fun interactive game built with HTML, CSS, and JavaScript</p>
+                <a href="rock-paper-scissors.html" style="background-color: #1f2937; color: white; padding: 8px 16px; text-decoration: none; font-weight: 600;">Play Game</a>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="background: white; padding: 20px; border: 1px solid #e5e7eb;">
+                <h3 style="color: #1f2937; margin-bottom: 10px; font-size: 18px;">Flexbox Layout</h3>
+                <p style="color: #6b7280; margin-bottom: 15px; line-height: 1.5;">Learn CSS Flexbox for flexible and responsive layouts</p>
+                <a href="flexbox.html" style="background-color: #1f2937; color: white; padding: 8px 16px; text-decoration: none; font-weight: 600;">Explore Flexbox</a>
+            </div>
+            
+            <div style="background: white; padding: 20px; border: 1px solid #e5e7eb;">
+                <h3 style="color: #1f2937; margin-bottom: 10px; font-size: 18px;">CSS Grid Layout</h3>
+                <p style="color: #6b7280; margin-bottom: 15px; line-height: 1.5;">Explore CSS Grid for complex 2D layouts and designs</p>
+                <a href="grid.html" style="background-color: #1f2937; color: white; padding: 8px 16px; text-decoration: none; font-weight: 600;">Learn Grid</a>
+            </div>
+            
+            <div style="background: white; padding: 20px; border: 1px solid #e5e7eb;">
+                <h3 style="color: #1f2937; margin-bottom: 10px; font-size: 18px;">Order Page</h3>
+                <p style="color: #6b7280; margin-bottom: 15px; line-height: 1.5;">Example order page layout and form design</p>
+                <a href="order.html" style="background-color: #1f2937; color: white; padding: 8px 16px; text-decoration: none; font-weight: 600;">View Order</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>Amazon's Key Services</h2>
+        <div class="info-cards">
+            <div class="info-card">
+                <div class="info-card-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1a/Amazon_Web_Services_Logo.svg'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <p>Amazon Web Services (AWS) - Leading cloud computing platform powering millions of businesses worldwide</p>
+            </div>
+            <div class="info-card">
+                <div class="info-card-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <p>Amazon Prime - Premium membership offering fast shipping, streaming, and exclusive benefits</p>
+            </div>
+            <div class="info-card">
+                <div class="info-card-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/cc/Amazon_Alexa_App_Logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <p>Alexa & Echo - AI-powered voice assistant and smart home devices revolutionizing daily life</p>
+            </div>
+            <div class="info-card">
+                <div class="info-card-image" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/ff/Amazon_Kindle_logo.svg'); background-size: contain; background-repeat: no-repeat; background-position: center;"></div>
+                <p>Kindle - Digital reading platform that transformed how we read books and access knowledge</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="quote">
+            "Amazon has fundamentally changed how we shop, work, and live. From revolutionizing e-commerce to pioneering cloud computing, Amazon continues to innovate and shape the future of technology."
+        </div>
+        <div class="quote-author">-Jeff Bezos, Amazon Founder</div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h3>Join the Amazon Revolution!</h3>
+            <p>Start your journey with Amazon today and experience the future of shopping and technology!</p>
+        </div>
+        <button class="cta-btn">Shop Now</button>
+    </section>
+
+    <footer class="footer">
+        © 2024 Amazon Explorer - Showcasing Amazon's Innovation and Services
+    </footer>
+</body>
 </html>
