@@ -288,6 +288,22 @@
         <div class="quote-author">-Jeff Bezos, Amazon Founder</div>
     </section>
 
+    <section class="info-section" style="background-color: white; padding: 48px 150px;">
+        <h2 style="color: #1f2937; margin-bottom: 24px;">JavaScript Array Methods Demo</h2>
+        <p style="color: #6b7280; font-size: 18px; margin-bottom: 20px;">Click the buttons to see JavaScript map, filter, and reduce in action!</p>
+        
+        <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+            <button onclick="showMapExample()" style="background-color: #3b82f6; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; font-weight: 600;">Show Map Example</button>
+            <button onclick="showFilterExample()" style="background-color: #10b981; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; font-weight: 600;">Show Filter Example</button>
+            <button onclick="showReduceExample()" style="background-color: #f59e0b; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; font-weight: 600;">Show Reduce Example</button>
+            <button onclick="fetchUsers()" style="background-color: #8b5cf6; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px; font-weight: 600;">Fetch API Users</button>
+        </div>
+        
+        <div id="output" style="background-color: #f3f4f6; padding: 20px; border: 1px solid #e5e7eb; min-height: 100px;">
+            <p style="color: #6b7280;">Click a button to see the results...</p>
+        </div>
+    </section>
+
     <section class="cta-section">
         <div class="cta-content">
             <h3>Join the Amazon Revolution!</h3>
@@ -299,5 +315,7 @@
     <footer class="footer">
         © 2024 Amazon Explorer - Showcasing Amazon's Innovation and Services
     </footer>
+
+    <script src="map.js"></script>
 </body>
 </html>
