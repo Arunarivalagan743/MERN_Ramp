@@ -1,62 +1,46 @@
-function double(num){
-    num=num*2;
-    return num;
+// Helper to update output area
+function setOutput(html) {
+    const el = document.getElementById('output');
+    if (!el) {
+        console.log('[output]', html);
+        return;
+    }
+    el.innerHTML = typeof html === 'string' ? html : String(html);
 }
-let arr=[1,2,3,4,5];
-let result=arr.map(double);
-console.log(result);
 
-function odd(num){
-    return num % 2!=0;
+// Demo dataset
+const arr = [1, 2, 3, 4, 5];
+
+// Button handlers used by index.html
+function showMapExample() {
+    const doubled = arr.map(n => n * 2);
+    setOutput(`<strong>map:</strong> [${arr.join(', ')}] -> [${doubled.join(', ')}]`);
 }
-let res=arr.filter(odd);
-console.log(res);
 
-let sum=arr.reduce((product, current)=>{
-    return product * current;
-});
-console.log(sum);
+function showFilterExample() {
+    const odds = arr.filter(n => n % 2 !== 0);
+    setOutput(`<strong>filter (odd):</strong> [${arr.join(', ')}] -> [${odds.join(', ')}]`);
+}
 
-let arr1=[3,4,5,6,8];
-let arr2=arr1.map((num)=>{
-    return num *3;
-})
-let arr3=arr2.filter((num)=>{
-  return num % 2 ==0 ;
-});
+function showReduceExample() {
+    const sum = arr.reduce((acc, n) => acc + n, 0);
+    setOutput(`<strong>reduce (sum):</strong> [${arr.join(', ')}] -> ${sum}`);
+}
 
-let sum1=arr3.reduce((product,current)=>{
-    return product +current;
-});
-console.log(sum1);
-
-let b=[1,2,3,4];
-
-const [one,two] = b;
-console.log(two);
-
-const obj1={ x:1,y:2};
-const obj2={z:5};
-const obj3={...obj1,...obj2};
-console.log(obj3);
-
-fetch('https://jsonplaceholder.typicode.com/users')
-.then(response => response.json())
-.then(data => data.map((user) =>console.log(user.name)))
-.catch(error => console.error('Error:', error))
-
-
-async function fetchData(){
-
-    try{
+async function fetchUsers() {
+    try {
+        setOutput('Loading users...');
         const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const data = await response.json();
-        data.forEach(user => console.log(user.name));
-    } catch (error) {
-        console.error('Error:', error);
+        const list = data.map(u => `<li>${u.name}</li>`).join('');
+        setOutput(`<strong>Users:</strong><ul style="margin-top:8px; padding-left:18px;">${list}</ul>`);
+    } catch (err) {
+        setOutput(`<span style="color:#dc2626">Failed to load users: ${err.message}</span>`);
     }
 }
 
-let name ="harish";
-let age =20;
+// Keep a tiny example of template literals (for learning reference)
+const name = 'harish';
+const age = 20;
 console.log(`My name is ${name} and my age is ${age}`);
